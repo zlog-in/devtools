@@ -45,6 +45,7 @@ FROM node:$NODE_VERSION AS base
 
 ARG RUST_TOOLCHAIN_VERSION=1.75.0
 ARG SOLANA_VERSION=1.18.17
+ARG ANCHOR_VERSION=0.30.1
 
 WORKDIR /app
 
@@ -90,7 +91,10 @@ RUN rm -rf ./solana-*
 RUN cargo install --git https://github.com/coral-xyz/anchor avm
 
 # Install anchor
-RUN avm install latest && avm use latest
+RUN avm install v${ANCHOR_VERSION}
+
+# Install AVM
+RUN avm use v${ANCHOR_VERSION}
 
 # Install foundry
 RUN curl -L https://foundry.paradigm.xyz | bash
