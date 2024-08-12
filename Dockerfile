@@ -91,10 +91,10 @@ RUN rm -rf ./solana-*
 RUN cargo install --git https://github.com/coral-xyz/anchor avm
 
 # Install anchor
-RUN avm install v${ANCHOR_VERSION}
+RUN avm install ${ANCHOR_VERSION}
 
 # Install AVM
-RUN avm use v${ANCHOR_VERSION}
+RUN avm use ${ANCHOR_VERSION}
 
 # Install foundry
 RUN curl -L https://foundry.paradigm.xyz | bash
