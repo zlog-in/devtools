@@ -90,7 +90,10 @@ RUN rm -rf ./solana-*
 RUN cargo install --git https://github.com/coral-xyz/anchor avm
 
 # Install anchor
-RUN avm install latest && avm use latest
+RUN avm install latest
+
+# Set default anchor
+RUN avm use latest
 
 # Install foundry
 RUN curl -L https://foundry.paradigm.xyz | bash
