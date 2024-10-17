@@ -412,7 +412,7 @@ FROM $EVM_NODE_IMAGE AS node-evm
 #  / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \
 # `-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'
 #
-#              Image that runs a hardhat EVM node
+#              Image that builds a MyLocalTON TON node
 #
 #   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-
 #  / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \
@@ -473,7 +473,7 @@ ENTRYPOINT ["java", "-jar", "MyLocalTon.jar", "nogui", "ton-http-api"]
 #  / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \
 # `-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'
 #
-#              Image that runs a hardhat EVM node
+#              Image that runs a TON node
 #
 #   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-
 #  / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \
