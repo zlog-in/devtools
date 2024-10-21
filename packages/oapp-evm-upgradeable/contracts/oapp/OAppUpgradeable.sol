@@ -31,6 +31,8 @@ abstract contract OAppUpgradeable is OAppSenderUpgradeable, OAppReceiverUpgradea
      */
     function __OApp_init(address _delegate) internal onlyInitializing {
         __OAppCore_init(_delegate);
+        __OAppReceiver_init();
+        __OAppSender_init();
     }
 
     function __OApp_init_unchained() internal onlyInitializing {}
