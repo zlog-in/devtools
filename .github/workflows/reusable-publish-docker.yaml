@@ -184,19 +184,28 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+  #
+  # Collect the TON node image digests and push them to GHCR
+  #
   push-node-ton:
     name: Push EVM node image
     runs-on: ubuntu-latest-4xlarge
     needs:
-      - build-node-ton
+      - build-node-evm
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Push image
-        uses: ./.github/workflows/actions/merge-docker-image
+        uses: ./.github/workflows/actions/docker-push-image
         with:
+          # The name of the image
           image: devtools-dev-node-ton-my-local-ton
+          # Since the digests will be shared across jobs as artifacts,
+          # we need a unique name (per workflow) for these artifacts
+          #
+          # This needs to match the digest name of the build stage
+          digest-name: node-ton-my-local-ton
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
