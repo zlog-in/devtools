@@ -188,10 +188,10 @@ jobs:
   # Collect the TON node image digests and push them to GHCR
   #
   push-node-ton:
-    name: Push EVM node image
+    name: Push TON node image
     runs-on: ubuntu-latest-4xlarge
     needs:
-      - build-node-evm
+      - build-node-ton
 
     steps:
       - name: Checkout repository
