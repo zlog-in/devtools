@@ -1,5 +1,11 @@
 # @layerzerolabs/oft-solana-example
 
+## 0.1.6
+
+### Patch Changes
+
+- 4ca5233: Enable squadsv4 CLI support
+
 ## 0.1.5
 
 ### Patch Changes
